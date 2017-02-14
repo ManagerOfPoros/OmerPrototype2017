@@ -24,6 +24,7 @@ public class Robot extends IterativeRobot {
 	private Feeder feeder;
 	@SuppressWarnings("unused")
 	private GearHolder gears;
+	private Climb climber;
 	private CameraThread streamer;
 	
 	/****************************************Joysticks********************************************/
@@ -49,8 +50,9 @@ public class Robot extends IterativeRobot {
 	{
 		/***********************************Declaring Objects***********************************************/
 		driver = new Driver(RobotMap.MOTOR_LEFT_ONE , RobotMap.MOTOR_LEFT_TWO, RobotMap.MOTOR_RIGHT_ONE, RobotMap.MOTOR_RIGHT_TWO );
-		shooter = new Shooter(RobotMap.MOTOR_SHOOT_ONE,RobotMap.MOTOR_SHOOT_TWO, RobotMap.SCRUMBLE_PORT);
+		shooter = new Shooter(RobotMap.MOTOR_SHOOT_ONE,RobotMap.MOTOR_SHOOT_TWO, RobotMap.MOTOR_SCRAMBLE);
 		feeder = new Feeder(RobotMap.MOTOR_FEEDER);
+		climber = new Climb(RobotMap.MOTOR_CLIMBER);
 		//gears = new GearHolder(0,2,4);
 		
 		//gears.SetLeds(true);
@@ -105,15 +107,18 @@ public class Robot extends IterativeRobot {
 		shooter.shoot(xbox.getRawAxis(RobotMap.XBOX_JOYSTICK_SCRAMBLE_FORWARD));
 		shooter.shootReverse(xbox.getRawButton(RobotMap.XBOX_JOYSTICK_SCRAMBLE_BACKWARD));
     	
-    	/****************************************** Scramble *******************************************/
+    	/***************************************** Scramble ********************************************/
     	shooter.scramble(xbox.getRawAxis(RobotMap.XBOX_JOYSTICK_SCRAMBLE_FORWARD));
     	shooter.scrambleReverse(xbox.getRawButton(RobotMap.XBOX_JOYSTICK_SCRAMBLE_BACKWARD));
     	
 		/****************************************** Feeder *********************************************/
 		feeder.feed(joy.getRawButton(RobotMap.JOYSTICK_FEEDER_BUTTON));
     	
-    	/***************************************** Gear Holder *****************************************/
+    	/**************************************** Gear Holder ******************************************/
 		//gears.isGearIn();
+		
+		/****************************************** Climbing *******************************************/
+		climber.climbing(xbox.getRawButton(RobotMap.XBOX_CLIMB_BUTTON)); //NOTE: Climb is a placeholder
 	}
 	
 	@Override

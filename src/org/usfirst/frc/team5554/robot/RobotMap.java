@@ -10,7 +10,8 @@ public class RobotMap {
     public final static int MOTOR_FEEDER = 5;
     public final static int MOTOR_SHOOT_ONE = 8;
     public final static int MOTOR_SHOOT_TWO = 4;
-    public final static int SCRUMBLE_PORT = 6;
+    public final static int MOTOR_SCRAMBLE = 6;
+	public final static int MOTOR_CLIMBER = 0; //TODO: Add a real engine port!
     
 /*******************Control & Sensor Ports***************************************************************/
     public final static int DRIVER_JOYSTICK_PORT = 0;
@@ -25,6 +26,7 @@ public class RobotMap {
     public final static int JOYSTICK_SLIDER_AXIS = 3; // Slider
     public final static int JOYSTICK_FEEDER_BUTTON = 1; // Joystick trigger
     public final static int JOYSTICK_SHOOTERCAM_BUTTON = 2; // Thumb button
+    public final static int[] BUTTONS_OF_CAMERAS = {10,11,12}; // Order: Forward Camera, Inside Camera, Shooter Camera
     
     //XBOX Controller
     public final static int XBOX_JOYSTICK_SHOOTER_FORWARD = 3; // RT Axis
@@ -33,7 +35,8 @@ public class RobotMap {
     public final static int XBOX_JOYSTICK_SCRAMBLE_BACKWARD = 5; // LB Button
     public final static int XBOX_JOYSTICK_SHOOTER_DASHBOARD_GUIDELINES = 1; // A Button
     public final static int XBOX_JOYSTICK_FEEDER_DASHBOARD_GUIDELINES = 4; // Y Button
-    public final static int[] BUTTONS_OF_CAMERAS = {10,11,12}; // Order: Forward Camera, Inside Camera, Shooter Camera
+    public final static int XBOX_CLIMB_BUTTON = 8; // Start Button
+    public final static int XBOX_EMERGENCY_CLIMB_STOP_BUTTON = 9; // Left Joystick Button
     
 /*******************Field & Robot Distances In Centimeters***********************************************/
     public final static int DISTANCE_TO_AIRSHIP_FROM_SIDE = 0; //TODO: Add a real measured value!
@@ -50,7 +53,5 @@ public class RobotMap {
     
     public final static int[] CAMERA_INDEXES = {0,1,2};
     public final static int NUMBER_OF_CAMERAS = 3;
-    
-
 }
 
